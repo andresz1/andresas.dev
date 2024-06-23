@@ -1,4 +1,4 @@
-export default function HomePage() {
+export default function CVPage() {
   return (
     <main>
       <h1>Hola</h1>
