@@ -49,7 +49,8 @@ export const RESUME_DATA = {
       logo: XIcon,
       start: "2022",
       end: null,
-      description: "Part of the Platform Team.",
+      description:
+        "Led the Front-End Engineering efforts for the Real Estate Web Community, overseeing Fotocasa and Habitaclia. Implemented initiatives to enhance developer experience (DX), observability, experimentation, testing, and performance organization-wide. Contributed to accelerating delivery and improving quality across key web applications including: Fotocasa, Habitaclia, Coches.net, Infojobs, Leboncoin, and ebay Kleinanzeigen.",
     },
     {
       company: "CodeOp",
@@ -58,7 +59,8 @@ export const RESUME_DATA = {
       title: "Web Development Lead Instructor",
       start: "2022",
       end: "2023",
-      description: "TODO",
+      description:
+        "Taught two 6-month Part-Time Full-Stack JavaScript courses for beginners, culminating in students building MVP applications using React, Express.js, and MySQL.",
     },
     {
       company: "Adevinta",
@@ -68,7 +70,7 @@ export const RESUME_DATA = {
       start: "2020",
       end: "2022",
       description:
-        "Part of the Trust and Transaction Team. Development of an Universal PWA using React, SCSS, Jest, Cypress, Optimizely and Datadog.",
+        "Member of the Trust and Transactions Team, responsible for developing the Milanuncios PWA using: React, SCSS, Jest and Cypress. Integrated Optimizely for experimentation and Datadog for monitoring and observability. Played a key role in the successful migration of Milanuncios from a PHP monolith to React.",
     },
     {
       company: "OLX | letgo",
