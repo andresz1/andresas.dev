@@ -103,7 +103,7 @@ export default function Page() {
             return (
               <article className="space-y-2" key={work.company}>
                 <div className="space-y-1.5">
-                  <div className="flex items-center justify-between gap-x-2 text-base">
+                  <div className="flex items-center justify-between gap-x-2 text-lg">
                     <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
                       <a className="hover:underline" href={work.link}>
                         {work.company}
@@ -122,12 +122,14 @@ export default function Page() {
                       </span>
                     </h3>
 
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="text-sm tabular-nums text-muted-foreground">
                       {work.start} - {work.end ?? "Present"}
                     </div>
                   </div>
 
-                  <h4 className="text-sm leading-none">{work.title}</h4>
+                  <h4 className="text-md leading-none">{work.title}</h4>
+
+                  <div className="text-sm leading-none">{work.location}</div>
                 </div>
 
                 <div className="text-sm text-muted-foreground">
@@ -154,9 +156,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="text-sm leading-none print:text-[12px]">
-                  {education.degree}
-                </div>
+                <div className="text-sm leading-none">{education.degree}</div>
               </article>
             );
           })}
