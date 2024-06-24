@@ -1,11 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { LinkBox, LinkOverlay } from "@/components/ui/link-overlay";
 
 interface Props {
   title: string;
@@ -16,32 +10,35 @@ interface Props {
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   return (
-    <Card className="flex flex-col overflow-hidden border border-muted p-3">
-      <CardHeader className="">
-        <div className="space-y-1">
-          <CardTitle className="text-base">
+    <LinkBox
+      className="flex flex-col overflow-hidden rounded-md border border-muted hover:shadow-md p-3"
+      asChild
+    >
+      <article className="flex flex-col gap-2">
+        <div className="space-y-1 flex-1">
+          <h3 className="text-base font-semibold">
             {link ? (
-              <a
+              <LinkOverlay
                 href={link}
                 target="_blank"
                 className="inline-flex items-center gap-1 hover:underline"
               >
-                {title}{" "}
-                <span className="size-1 rounded-full bg-green-500"></span>
-              </a>
+                {title}
+              </LinkOverlay>
             ) : (
               title
             )}
-          </CardTitle>
-          <div className="hidden font-mono text-xs underline print:visible">
+          </h3>
+
+          <div className="hidden text-sm underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <CardDescription className="font-mono text-xs print:text-[10px]">
+
+          <p className="text-sm print:text-xs text-muted-foreground">
             {description}
-          </CardDescription>
+          </p>
         </div>
-      </CardHeader>
-      <CardContent className="mt-auto flex">
+
         <div className="mt-2 flex flex-wrap gap-1">
           {tags.map((tag) => (
             <Badge
@@ -53,7 +50,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
             </Badge>
           ))}
         </div>
-      </CardContent>
-    </Card>
+      </article>
+    </LinkBox>
   );
 }

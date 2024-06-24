@@ -1,8 +1,8 @@
-import { MailIcon, PhoneIcon } from "lucide-react";
+import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
 
 import { ProjectCard } from "@/components/project/project-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
@@ -18,15 +18,37 @@ export default function Page() {
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
       <div className="mx-auto w-full max-w-4xl space-y-8 bg-white print:space-y-4">
         <section className="flex flex-col items-center space-y-4">
-          <Avatar className="size-32">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar>
+          <div className="relative size-32 rounded-full overflow-hidden">
+            <Image
+              alt={RESUME_DATA.name}
+              src={RESUME_DATA.avatarUrl}
+              fill
+              priority
+            />
+          </div>
 
           <div className="space-y-0 text-center">
             <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
 
-            <p className="text-muted-foreground text-md">{RESUME_DATA.about}</p>
+            <div className="space-y-0.5">
+              <p className="text-muted-foreground text-md">
+                {RESUME_DATA.about}
+              </p>
+
+              <p className="text-muted-foreground text-sm">
+                <a
+                  className="flex gap-1 items-center justify-center hover:underline"
+                  href={RESUME_DATA.locationLink}
+                  target="_blank"
+                >
+                  <Icon>
+                    <GlobeIcon />
+                  </Icon>
+
+                  {RESUME_DATA.location}
+                </a>
+              </p>
+            </div>
           </div>
 
           <div className="flex gap-2">
@@ -105,9 +127,7 @@ export default function Page() {
                     </div>
                   </div>
 
-                  <h4 className="text-sm leading-none print:text-[12px]">
-                    {work.title}
-                  </h4>
+                  <h4 className="text-sm leading-none">{work.title}</h4>
                 </div>
 
                 <div className="text-sm text-muted-foreground">
@@ -163,7 +183,7 @@ export default function Page() {
         <section className="flex min-h-0 flex-col gap-y-6">
           <h2 className="text-xl font-bold">Projects</h2>
 
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-2 print:gap-4 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
               return (
                 <ProjectCard

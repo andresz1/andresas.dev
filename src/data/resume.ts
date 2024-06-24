@@ -4,7 +4,7 @@ export const RESUME_DATA = {
   name: "Andrés Alvarez",
   initials: "AA",
   location: "Barcelona Area, Spain",
-  locationLink: "https://www.google.com/maps/place/Wrocław",
+  locationLink: "https://www.google.es/maps/place/Barcelona",
   about: "Staff Software Engineer",
   summary:
     "I'm a Software Developer with experience in Server, Network and Hosting Management, Data Modeling, Business Logic, User Interface and User Experience. I'm mainly focused on Web and Mobile Development. A huge part of my work experience is related with it. I feel comfortable developing both Front-End and Back-End. I define myself as a creative, dedicated and responsable person who likes challenges. I'm an optimist rather than a pessimist, but I'm also a realist. I enjoy learning new things and sharing my knowledges.",
@@ -46,27 +46,30 @@ export const RESUME_DATA = {
       link: "https://adevinta.com",
       badges: [],
       title: "Staff Front-End Engineer",
+      location: "Barcelona Area, Spain",
       logo: XIcon,
       start: "2022",
       end: null,
       description:
-        "Led the Front-End Engineering efforts for the Real Estate Web Community, overseeing Fotocasa and Habitaclia. Implemented initiatives to enhance developer experience (DX), observability, experimentation, testing, and performance organization-wide. Contributed to accelerating delivery and improving quality across key web applications including: Fotocasa, Habitaclia, Coches.net, Infojobs, Leboncoin, and ebay Kleinanzeigen.",
+        "Leading the Front-End Engineering efforts for the Real Estate Web Community, overseeing Fotocasa and Habitaclia. Implementing initiatives to enhance developer experience (DX), observability, experimentation, testing, and performance organization-wide. Contributing to accelerating delivery and improving quality across key web applications including: Fotocasa, Habitaclia, Coches.net, Infojobs, Leboncoin, and ebay Kleinanzeigen.",
     },
     {
       company: "CodeOp",
       link: "https://codeop.tech",
       badges: [],
       title: "Web Development Lead Instructor",
+      location: "Barcelona Area, Spain",
       start: "2022",
       end: "2023",
       description:
-        "Taught two 6-month Part-Time Full-Stack JavaScript courses for beginners, culminating in students building MVP applications using React, Express.js, and MySQL.",
+        "Taught two 6-month Part-Time Full-Stack JavaScript courses for beginners, culminating in students building MVP applications using: React, Express.js, and MySQL.",
     },
     {
       company: "Adevinta",
       link: "https://adevinta.com",
       badges: [],
       title: "Senior Front-End Engineer",
+      location: "Barcelona Area, Spain",
       start: "2020",
       end: "2022",
       description:
@@ -77,6 +80,7 @@ export const RESUME_DATA = {
       link: "https://www.olx.com",
       badges: [],
       title: "Senior Full-Stack Engineer",
+      location: "Barcelona Area, Spain",
       start: "2018",
       end: "2020",
       description:
@@ -87,6 +91,7 @@ export const RESUME_DATA = {
       link: "https://www.rock.et",
       badges: [],
       title: "Full-Stack Engineer",
+      location: "Barcelona Area, Spain",
       start: "2017",
       end: "2018",
       description:
@@ -97,6 +102,7 @@ export const RESUME_DATA = {
       link: "https://slashmobility.com",
       badges: [],
       title: "Front-End Engineer",
+      location: "Barcelona Area, Spain",
       start: "2016",
       end: "2017",
       description:
@@ -107,6 +113,7 @@ export const RESUME_DATA = {
       link: "https://www.linkedin.com/company/ludopia",
       badges: [],
       title: "Back-End Engineer",
+      location: "Caracas Area, Venezuela",
       start: "2016",
       end: "2016",
       description:
@@ -117,20 +124,22 @@ export const RESUME_DATA = {
       link: "https://www.linkedin.com/company/inwork-solutions",
       badges: [],
       title: "Junior Web Engineer",
+      location: "Caracas Area, Venezuela",
       start: "2015",
       end: "2015",
       description:
-        "Design and development of REST APIs using Node.js, Express.js and MongoDB. Also worked using HTML5, JQuery and Phaser.js to make landing pages and Cross-Platform 2D games.",
+        "Design and development of REST APIs using: Node.js, Express.js and MongoDB. Also worked using HTML5, JQuery and Phaser.js to make landing pages and Cross-Platform 2D games.",
     },
     {
       company: "Universidad Central de Venezuela",
       link: "http://www.ucv.ve",
       badges: [],
       title: "System Administrator",
+      location: "Caracas Area, Venezuela",
       start: "2013",
       end: "2016",
       description:
-        "Monitoring, deployment and maintenance of various servers, mainly Linux based. Management of applications on Apache using several modules. Development of websites using Wordpress, HTML5, CSS and JavaScript. Database administration on MySQL for multiple applications hosted on the main server. Network and hardware support. As part of the work I was also a Teaching Assistant. Courses given: Programming Languages, Computer Graphics Introduction and Fundamentals and Techniques in Computer Graphics.",
+        "Monitoring, deployment and maintenance of various servers, mainly Linux based. Management of applications on Apache using several modules. Development of websites using: Wordpress, HTML5, CSS and JavaScript. Database administration on MySQL for multiple applications hosted on the main server. Network and hardware support. As part of the work I was also a Teaching Assistant. Courses given: Programming Languages, Computer Graphics Introduction and Fundamentals and Techniques in Computer Graphics.",
     },
   ],
   skills: [
@@ -200,7 +209,8 @@ export const RESUME_DATA = {
     {
       title: "spark",
       tags: ["Design System", "React", "Radix", "A11Y"],
-      description: "Create accessible React apps with ease.",
+      description:
+        "React based design system focused on modularity and accessibility, using TailwindCSS and Radix UI.",
       link: {
         label: "spark",
         href: "https://sparkui.vercel.app",
