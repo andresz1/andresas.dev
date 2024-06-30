@@ -1,4 +1,4 @@
-const categories = require("./data/categories.json");
+const categories = require("./src/data/categories.json");
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
