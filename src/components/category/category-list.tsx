@@ -18,7 +18,7 @@ export const CategoryList = ({ categories, ...others }: CategoryListProps) => {
           key={category.id}
           asChild
         >
-          <Link href={`/category/${category.id}`}>{category.name}</Link>
+          <Link href={`/posts/${category.id}`}>{category.name}</Link>
         </Button>
       ))}
     </div>
