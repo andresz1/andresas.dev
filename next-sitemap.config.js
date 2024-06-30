@@ -4,12 +4,12 @@ const categories = require("./src/data/categories.json");
 module.exports = {
   siteUrl: process.env.SITE_URL || "https://andresas.dev",
   generateRobotsTxt: true,
-  additionalPaths: () => {
-    const result = [];
-
-    categories.forEach((category) => {
-      result.push({ loc: `/posts/${category.id}` });
-    });
+  additionalPaths: async () => {
+    const result = await Promises.all(
+      categories.map(async (category) => {
+        result.push(await config.transform(config, `/posts/${category.id}`));
+      })
+    );
 
     return result;
   },
