@@ -18,7 +18,7 @@ export default async function PostListPage() {
   const posts = await postService.fetchAll();
 
   return (
-    <>
+    <Container className="space-y-6">
       <div className="max-w-2xl mx-auto space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl md:text-4xl font-bold">
@@ -44,13 +44,11 @@ export default async function PostListPage() {
         </div>
       </div>
 
-      <Container asChild>
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">Todos los artículos</h2>
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Todos los artículos</h2>
 
-          <PostList posts={posts} />
-        </section>
-      </Container>
-    </>
+        <PostList posts={posts} />
+      </section>
+    </Container>
   );
 }
