@@ -43,7 +43,7 @@ export default async function HomePage() {
 
         <div className="flex flex-col md:flex-row gap-2 justify-center">
           <Button size="lg" className="shadow-md" asChild>
-            <Link href="/posts">Ver artículos</Link>
+            <Link href="/category">Ver artículos</Link>
           </Button>
 
           <Button size="lg" variant="outline" className="shadow-md" asChild>
@@ -85,7 +85,7 @@ export default async function HomePage() {
 
         <div className="flex justify-center gap-2">
           <Button asChild>
-            <Link href="/posts">Ver todos</Link>
+            <Link href="/category">Ver todos</Link>
           </Button>
         </div>
       </section>
