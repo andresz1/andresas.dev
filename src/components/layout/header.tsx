@@ -3,11 +3,10 @@ import Link from "next/link";
 import { ComponentPropsWithoutRef } from "react";
 
 import { ModeToggleButton } from "@/components/shared/mode-toggle-button";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/components/ui/core";
-
-import { Button } from "../ui/button";
-import { Icon } from "../ui/icon";
+import { Icon } from "@/components/ui/icon";
 
 export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {}
 
@@ -29,16 +28,20 @@ export const Header = ({ className, ...others }: HeaderProps) => {
         </div>
 
         <div className="flex gap-2">
-          <Button size="icon" variant="outline">
-            <Icon>
-              <Github />
-            </Icon>
+          <Button size="icon" variant="outline" asChild>
+            <a href="https://github.com/andresz1" target="_blank">
+              <Icon>
+                <Github />
+              </Icon>
+            </a>
           </Button>
 
-          <Button size="icon" variant="outline">
-            <Icon>
-              <Twitter />
-            </Icon>
+          <Button size="icon" variant="outline" asChild>
+            <a href="https://twitter.com/andresz_s" target="_blank">
+              <Icon>
+                <Twitter />
+              </Icon>
+            </a>
           </Button>
 
           <ModeToggleButton />

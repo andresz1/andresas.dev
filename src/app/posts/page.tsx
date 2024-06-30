@@ -7,9 +7,9 @@ import { Icon } from "@/components/ui/icon";
 import { ServicesFactory } from "@/services";
 
 export const metadata = {
-  title: "Consejos sobre JavaScript, React y más",
+  title: "Aprende sobre desarrollo web y más",
   description:
-    "Cuento mis experiencia trabajando en aplicaciones web de gran escala",
+    "Aprende buenas prácticas y mantente actualizado a través de artículos cortos basados en experiencias reales..",
 };
 
 export default async function PostListPage() {
@@ -19,52 +19,30 @@ export default async function PostListPage() {
 
   return (
     <>
-      <Container>
-        <div className="max-w-2xl mx-auto space-y-4 text-center">
-          <div className="text-xl md:text-2xl font-semibold">
-            Hola, soy Andres Alvarez 👋🏻
-          </div>
+      <div className="max-w-2xl mx-auto space-y-4 text-center">
+        <div className="space-y-2">
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Aprende sobre Desarrollo Web y más
+          </h1>
 
-          <div className="space-y-2">
-            <h1 className="text-3xl md:text-4xl font-bold">
-              Consejos sobre JavaScript, CSS, React y más
-            </h1>
+          <p className="text-md md:text-lg text-muted-foreground">
+            Descubre buenas prácticas y mantente actualizado con artículos
+            cortos basados en experiencias reales de{" "}
+            <strong>desarrollo web</strong>.
+          </p>
+        </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Te cuento mis experiencias trabajando en aplicaciones web de gran
-              escala como:{" "}
-              <a href="https://www.fotocasa.es/es/" target="_blank">
-                fotocasa
-              </a>
-              ,{" "}
-              <a href="https://www.fotocasa.es/es/" target="_blank">
-                coches.net
-              </a>
-              ,{" "}
-              <a href="https://www.fotocasa.es/es/" target="_blank">
-                milanuncios
-              </a>
-              ,{" "}
-              <a href="https://www.fotocasa.es/es/" target="_blank">
-                lenboncoin
-              </a>{" "}
-              y{" "}
-              <a href="https://www.fotocasa.es/es/" target="_blank">
-                OLX
-              </a>
-            </p>
-          </div>
-
-          <div className="flex flex-col md:flex-row gap-2 justify-center">
-            <Button size="lg" className="shadow-md">
+        <div className="flex flex-col md:flex-row gap-2 justify-center">
+          <Button size="lg" variant="outline" className="shadow-md" asChild>
+            <a href="https://twitter.com/andresz_s" target="_blank">
               <Icon>
                 <Twitter />
               </Icon>
               Sígueme
-            </Button>
-          </div>
+            </a>
+          </Button>
         </div>
-      </Container>
+      </div>
 
       <Container asChild>
         <section className="space-y-4">

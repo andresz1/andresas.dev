@@ -2,6 +2,7 @@ import { Twitter } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
+import { CategoryList } from "@/components/category/category-list";
 import { PostList } from "@/components/post/post-list";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -9,9 +10,9 @@ import { Icon } from "@/components/ui/icon";
 import { ServicesFactory } from "@/services";
 
 export const metadata: Metadata = {
-  title: "JavaScript, CSS, React, Performance y más | andresas",
+  title: "JavaScript, CSS, React y más | andresas",
   description:
-    "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos breves y concisos.",
+    "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos cortos.",
 };
 
 export default async function HomePage() {
@@ -26,18 +27,18 @@ export default async function HomePage() {
         <div className="max-w-2xl mx-auto space-y-4 text-center">
           <div className="space-y-2">
             <div className="text-lg md:text-xl text-muted-foreground">
-              Hola, soy <strong>Andrés Alvarez</strong> 👋🏻 <br /> y este es mi
-              sitio web donde encontrarás:
+              Hola, soy <strong>Andrés Alvarez</strong> 👋🏻 y aqui encontrarás:
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold">
-              Artículos cortos sobre JavaScript, CSS, React, Performance y más
+              Artículos cortos sobre JavaScript, CSS, React y más
             </h1>
 
             <p className="text-md md:text-lg text-muted-foreground">
               Comparto mis experiencias trabajando en aplicaciones web de gran
               escala, así como en proyectos personales, a través de{" "}
-              <strong>artículos breves y concisos</strong>.
+              <strong>artículos cortos</strong> sobre{" "}
+              <strong>desarrollo web</strong>.
             </p>
           </div>
 
@@ -73,9 +74,9 @@ export default async function HomePage() {
             consultoría en Web Performance.
           </p>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-2">
             <Button asChild>
-              <Link href="/cv">Conóceme más</Link>
+              <Link href="/cv">Ver más</Link>
             </Button>
           </div>
         </section>
@@ -86,6 +87,12 @@ export default async function HomePage() {
           <h2 className="text-2xl font-semibold">Últimos artículos</h2>
 
           <PostList posts={posts} />
+
+          <div className="flex justify-center gap-2">
+            <Button asChild>
+              <Link href="/posts">Ver todos</Link>
+            </Button>
+          </div>
         </section>
       </Container>
 
@@ -93,16 +100,7 @@ export default async function HomePage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">Categorias</h2>
 
-          {categories.map((category) => (
-            <Button
-              className="mr-2 mb-2"
-              variant="secondary"
-              key={category.id}
-              asChild
-            >
-              <Link href={`/posts/${category.id}`}>{category.id}</Link>
-            </Button>
-          ))}
+          <CategoryList categories={categories} />
         </section>
       </Container>
     </>

@@ -21,9 +21,9 @@ export class PostService {
     return posts;
   }
 
-  async fetchAllByCategory({ id }: { id: string }) {
+  async fetchAllByCategory({ categoryId }: { categoryId: string }) {
     const posts = await this.fetchAll();
 
-    return posts.filter((post) => post.categories.indexOf(id) !== -1);
+    return posts.filter((post) => post.categories.indexOf(categoryId) !== -1);
   }
 }
