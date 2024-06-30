@@ -6,8 +6,8 @@ module.exports = {
   generateRobotsTxt: true,
   additionalPaths: async () => {
     const result = await Promise.all(
-      categories.map(async (category) => {
-        result.push(await config.transform(config, `/posts/${category.id}`));
+      categories.map((category) => {
+        return config.transform(config, `/posts/${category.id}`);
       })
     );
 
