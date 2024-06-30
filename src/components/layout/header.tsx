@@ -1,4 +1,4 @@
-import { Github, Twitter } from "lucide-react";
+import { Github, Slash, Twitter } from "lucide-react";
 import Link from "next/link";
 import { ComponentPropsWithoutRef } from "react";
 
@@ -19,9 +19,13 @@ export const Header = ({ className, ...others }: HeaderProps) => {
     >
       <Container className={cn("flex h-16 items-center justify-between")}>
         <div className="flex gap-2">
-          <Link className="flex gap-2 items-center" href="/">
-            <div>aas</div>
-          </Link>
+          <Button size="icon" variant="ghost" asChild>
+            <Link href="/">
+              <Icon>
+                <Slash />
+              </Icon>
+            </Link>
+          </Button>
         </div>
 
         <div className="flex gap-2">
