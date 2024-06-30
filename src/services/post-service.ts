@@ -1,12 +1,12 @@
 import { readdir } from "fs/promises";
+import { resolve } from "path";
 
-import { Category } from "@/types/Category";
 import { Post } from "@/types/Post";
 
 export class PostService {
   async fetchAll(): Promise<Array<Post>> {
     const slugs = (
-      await readdir("./src/app/(posts)", { withFileTypes: true })
+      await readdir(resolve("src/app/(posts)"), { withFileTypes: true })
     ).filter((dirent) => dirent.isDirectory());
 
     const posts = await Promise.all(
