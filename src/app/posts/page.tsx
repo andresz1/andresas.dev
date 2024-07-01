@@ -8,7 +8,7 @@ import { ServicesFactory } from "@/services";
 
 const title = "Aprende sobre desarrollo web y más";
 const description =
-  "Aprende buenas prácticas y mantente actualizado a través de artículos cortos basados en experiencias reales..";
+  "Descubre novedades, trucos y buenas prácticas a través de artículos cortos basados en experiencias reales.";
 
 export const metadata = {
   title,
@@ -38,9 +38,8 @@ export default async function PostListPage() {
           </h1>
 
           <p className="text-md md:text-lg text-muted-foreground">
-            Descubre buenas prácticas y mantente actualizado con artículos
-            cortos basados en experiencias reales de{" "}
-            <strong>desarrollo web</strong>.
+            Descubre novedades, trucos y buenas prácticas con artículos cortos
+            basados en experiencias reales de <strong>desarrollo web</strong>.
           </p>
         </div>
 
