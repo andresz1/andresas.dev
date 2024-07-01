@@ -13,7 +13,10 @@ export interface HeaderProps extends ComponentPropsWithoutRef<"header"> {}
 export const Header = ({ className, ...others }: HeaderProps) => {
   return (
     <header
-      className={cn("sticky top-0 z-20 backdrop-blur-md", className)}
+      className={cn(
+        "sticky top-0 z-20 backdrop-blur-md print:hidden",
+        className
+      )}
       {...others}
     >
       <Container className={cn("flex h-16 items-center justify-between")}>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+    <div className="container relative mx-auto scroll-my-12 overflow-auto print:p-12">
       <div className="mx-auto w-full max-w-4xl space-y-8 bg-white print:space-y-4">
         <section className="flex flex-col items-center space-y-4">
           <div className="relative size-32 rounded-full overflow-hidden">
