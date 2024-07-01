@@ -78,3 +78,24 @@
 .print-force-new-page {
   page-break-before: always;
 }
+
+.prose .anchor {
+  @apply absolute invisible no-underline ml-[-1em] pr-[0.5em] w-[80%] cursor-pointer max-w-[700px];
+}
+
+.prose .anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .icon.icon-link:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: "#";
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}

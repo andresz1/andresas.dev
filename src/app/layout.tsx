@@ -9,10 +9,16 @@ import { ThemeProvider } from "@/components/ui/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const siteURL = process.env.SITE_URL as string;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteURL),
   title: {
     template: "%s | andresas",
     default: "andresas",
+  },
+  alternates: {
+    canonical: "./",
   },
 };
 

@@ -13,7 +13,7 @@ export interface PostItemProps extends ComponentPropsWithoutRef<"article"> {
 }
 
 export const PostItem = ({ post, className, ...others }: PostItemProps) => {
-  const { slug, title, publishDate } = post;
+  const { slug, title, publishedAt } = post;
 
   return (
     <LinkBox asChild>
@@ -32,7 +32,7 @@ export const PostItem = ({ post, className, ...others }: PostItemProps) => {
           </h3>
 
           <p className="text-muted-foreground">
-            {new Date(publishDate).toLocaleDateString()}
+            {new Date(publishedAt).toLocaleDateString()}
           </p>
         </div>
 

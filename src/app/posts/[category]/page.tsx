@@ -25,9 +25,21 @@ export async function generateMetadata({
     return {};
   }
 
+  const title = `Aprende sobre ${category.name}`;
+  const description = `Aprende sobre ${category.name}, buenas prácticas y mantente actualizado a través de artículos cortos.`;
+
   return {
-    title: `Aprende sobre ${category.name}`,
-    description: `Aprende sobre ${category.name}, buenas prácticas y mantente actualizado a través de artículos cortos.`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
