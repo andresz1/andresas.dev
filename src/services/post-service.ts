@@ -32,10 +32,11 @@ export class PostService {
     );
 
     const posts = await Promise.all(
-      slugs.map(async (slug) => {
+      slugs.map(async (name) => {
         const { metadata, content } = this.parseFrontmatter(
-          await readFile(join(directory, slug), "utf-8")
+          await readFile(join(directory, name), "utf-8")
         );
+        const slug = name.split(".mdx")[0];
 
         return { slug, ...metadata, content } as Post;
       })
