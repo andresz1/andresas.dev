@@ -9,10 +9,22 @@ import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icon";
 import { ServicesFactory } from "@/services";
 
+const title = "JavaScript, CSS, React y más | andresas";
+const description =
+  "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos cortos.";
+
 export const metadata: Metadata = {
-  title: "JavaScript, CSS, React y más | andresas",
-  description:
-    "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos cortos.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default async function HomePage() {

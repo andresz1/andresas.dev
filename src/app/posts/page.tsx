@@ -6,10 +6,22 @@ import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icon";
 import { ServicesFactory } from "@/services";
 
+const title = "Aprende sobre desarrollo web y más";
+const description =
+  "Aprende buenas prácticas y mantente actualizado a través de artículos cortos basados en experiencias reales..";
+
 export const metadata = {
-  title: "Aprende sobre desarrollo web y más",
-  description:
-    "Aprende buenas prácticas y mantente actualizado a través de artículos cortos basados en experiencias reales..",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default async function PostListPage() {
