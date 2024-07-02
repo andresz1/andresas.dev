@@ -1,5 +1,5 @@
 import { readdir, readFile } from "fs/promises";
-import { extname, join } from "path";
+import { extname, join, resolve } from "path";
 
 import { Post, PostMetadata } from "@/types/Post";
 
@@ -27,7 +27,7 @@ export class PostService {
 
   async fetchAll(): Promise<Array<Post>> {
     const directory = "posts";
-    const slugs = (await readdir(directory)).filter(
+    const slugs = (await readdir(resolve(directory))).filter(
       (file) => extname(file) === ".mdx"
     );
 
