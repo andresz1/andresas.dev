@@ -26,6 +26,10 @@ export async function generateMetadata({
   }
 
   const { title, summary: description, publishedAt } = post;
+  const siteURL = process.env.SITE_URL;
+  const image = post.image
+    ? `${siteURL}${post.image}`
+    : `${siteURL}/og?title=${title}`;
 
   return {
     title,
@@ -35,12 +39,18 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime: publishedAt,
-      url: `https://www.andresas.dev/${post.slug}`,
+      url: `${siteURL}/${post.slug}`,
+      images: [
+        {
+          url: image,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [image],
     },
   };
 }
