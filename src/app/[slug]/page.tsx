@@ -67,10 +67,38 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
     notFound();
   }
 
+  const siteURL = process.env.SITE_URL;
+  const image = post.image
+    ? `${siteURL}${post.image}`
+    : `${siteURL}/og?title=${post.title}`;
+
   return (
-    <Container className="prose break-words dark:prose-invert prose-p:leading-relaxed">
-      <MDX source={post.content} />
-    </Container>
+    <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            datePublished: post.publishedAt,
+            dateModified: post.publishedAt,
+            description: post.summary,
+            image: image,
+            url: `${siteURL}/${post.slug}`,
+            author: {
+              "@type": "Person",
+              name: "Andrés Alvarez",
+            },
+          }),
+        }}
+      />
+
+      <Container className="prose break-words dark:prose-invert prose-p:leading-relaxed">
+        <MDX source={post.content} />
+      </Container>
+    </>
   );
 }
 
