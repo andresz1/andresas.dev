@@ -10,7 +10,7 @@ export interface CategoryListProps extends ComponentPropsWithoutRef<"div"> {
 
 export const CategoryList = ({ categories, ...others }: CategoryListProps) => {
   return (
-    <div>
+    <div {...others}>
       {categories.map((category) => (
         <Button
           className="mr-2 mb-2"
