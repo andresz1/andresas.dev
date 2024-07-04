@@ -16,17 +16,18 @@ export async function GET(req: NextRequest) {
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          justifyContent: "center",
           backgroundColor: "black",
+          gap: "16px",
+          padding: "210px",
+          color: "white",
         }}
       >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            color: "white",
-            whiteSpace: "pre-wrap",
-            gap: "64px",
+            justifyContent: "center",
+            flex: 1,
           }}
         >
           <div
@@ -36,29 +37,30 @@ export async function GET(req: NextRequest) {
           >
             {postTitle}
           </div>
-          <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
-            <img
-              style={{ borderRadius: "9999px" }}
-              alt=""
-              width="150"
-              height="150"
-              src="https://pbs.twimg.com/profile_images/1795192021801443329/3a7ehmex_400x400.jpg"
-            />
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div
-                style={{
-                  fontSize: 50,
-                }}
-              >
-                Andrés Alvarez
-              </div>
-              <div
-                style={{
-                  fontSize: 35,
-                }}
-              >
-                Software Engineer
-              </div>
+        </div>
+
+        <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
+          <img
+            style={{ borderRadius: "9999px" }}
+            alt=""
+            width="150"
+            height="150"
+            src="https://pbs.twimg.com/profile_images/1795192021801443329/3a7ehmex_400x400.jpg"
+          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+              style={{
+                fontSize: 50,
+              }}
+            >
+              Andrés Alvarez
+            </div>
+            <div
+              style={{
+                fontSize: 35,
+              }}
+            >
+              Software Engineer
             </div>
           </div>
         </div>
