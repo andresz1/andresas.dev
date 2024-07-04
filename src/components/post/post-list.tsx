@@ -11,7 +11,7 @@ export interface PostListProps extends ComponentPropsWithoutRef<"div"> {
 
 export const PostList = ({ posts, className, ...others }: PostListProps) => {
   return (
-    <div className={cn("space-y-2", className)} {...others}>
+    <div className={cn("space-y-4", className)} {...others}>
       {posts.map((post) => (
         <PostItem key={post.slug} post={post} />
       ))}
