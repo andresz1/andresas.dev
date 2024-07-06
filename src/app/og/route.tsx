@@ -18,7 +18,10 @@ export async function GET(req: NextRequest) {
           alignItems: "flex-start",
           backgroundColor: "black",
           gap: "16px",
-          padding: "210px",
+          paddingLeft: "214px",
+          paddingRight: "214px",
+          paddingTop: "124px",
+          paddingBottom: "124px",
           color: "white",
         }}
       >
@@ -33,6 +36,7 @@ export async function GET(req: NextRequest) {
           <div
             style={{
               fontSize: 130,
+              fontWeight: "bold",
             }}
           >
             {postTitle}
@@ -51,6 +55,7 @@ export async function GET(req: NextRequest) {
             <div
               style={{
                 fontSize: 50,
+                fontWeight: "bold",
               }}
             >
               Andrés Alvarez
@@ -58,9 +63,10 @@ export async function GET(req: NextRequest) {
             <div
               style={{
                 fontSize: 35,
+                fontWeight: "normal",
               }}
             >
-              Software Engineer
+              Staff Front-End Engineer
             </div>
           </div>
         </div>
