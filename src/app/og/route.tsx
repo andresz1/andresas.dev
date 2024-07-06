@@ -4,8 +4,12 @@ import { NextRequest } from "next/server";
 export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
+  const siteURL = process.env.SITE_URL;
   const { searchParams } = req.nextUrl;
-  const postTitle = searchParams.get("title");
+  const title = searchParams.get("title") || "/";
+  const font = await fetch(
+    new URL("../../../public/fonts/Inter-Bold.ttf", import.meta.url)
+  ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
@@ -35,35 +39,34 @@ export async function GET(req: NextRequest) {
         >
           <div
             style={{
-              fontSize: 130,
-              fontWeight: "bold",
+              fontSize: "82px",
+              fontFamily: "Inter",
             }}
           >
-            {postTitle}
+            {title}
           </div>
         </div>
 
         <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
           <img
             style={{ borderRadius: "9999px" }}
-            alt=""
+            alt="Foto de Andrés Alvarez"
             width="150"
             height="150"
-            src="https://pbs.twimg.com/profile_images/1795192021801443329/3a7ehmex_400x400.jpg"
+            src={`${siteURL}/images/profile.jpg`}
           />
-          <div style={{ display: "flex", flexDirection: "column" }}>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <div
               style={{
-                fontSize: 50,
-                fontWeight: "bold",
+                fontSize: "46px",
               }}
             >
               Andrés Alvarez
             </div>
             <div
               style={{
-                fontSize: 35,
-                fontWeight: "normal",
+                fontSize: "28px",
               }}
             >
               Staff Front-End Engineer
@@ -75,6 +78,13 @@ export async function GET(req: NextRequest) {
     {
       width: 1920,
       height: 1080,
+      fonts: [
+        {
+          name: "Inter",
+          data: font,
+          style: "normal",
+        },
+      ],
     }
   );
 }

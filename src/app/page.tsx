@@ -9,23 +9,33 @@ import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icon";
 import { ServicesFactory } from "@/services";
 
-const title = "JavaScript, CSS, React y más | andresas";
-const description =
-  "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos cortos.";
+export async function generateMetadata() {
+  const siteURL = process.env.SITE_URL;
+  const title = "andresas | JavaScript, CSS, React y más ";
+  const description =
+    "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos cortos.";
+  const image = `${siteURL}/og`;
 
-export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: {
+  return {
     title,
     description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
 
 export default async function HomePage() {
   const { categoryService, postService } = ServicesFactory.create();
@@ -47,9 +57,7 @@ export default async function HomePage() {
 
           <p className="text-md md:text-lg text-muted-foreground">
             Comparto mis experiencias trabajando en aplicaciones web de gran
-            escala, así como en proyectos personales, a través de{" "}
-            <strong>artículos cortos</strong> sobre{" "}
-            <strong>desarrollo web</strong>.
+            escala, así como en proyectos personales.
           </p>
         </div>
 
@@ -75,9 +83,9 @@ export default async function HomePage() {
         <p className="text-muted-foreground">
           Soy desarrollador web, me encanta aprender cosas nuevas y compartir
           mis conocimientos. Actualmente, trabajo como{" "}
-          <b>Staff Front-End Platform Engineer</b> en Adevinta, donde doy
-          soporte a aplicaciones como Fotocasa, Habitaclia, Infojobs, Coches.net
-          y Leboncoin. <br />
+          <b>Staff Front-End Engineer</b> en Adevinta, donde doy soporte a
+          aplicaciones como Fotocasa, Habitaclia, Infojobs, Coches.net y
+          Leboncoin. <br />
           <br /> Disfruto colaborando en proyectos de código abierto y
           desarrollando proyectos personales. Además, ofrezco servicios de
           consultoría en Web Performance.

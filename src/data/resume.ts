@@ -5,11 +5,10 @@ export const RESUME_DATA = {
   initials: "AA",
   location: "Barcelona Area, Spain",
   locationLink: "https://www.google.es/maps/place/Barcelona",
-  about: "Staff Software Engineer",
+  about: "Staff Front-End Engineer",
   summary:
     "I'm a Software Developer with experience in Server, Network and Hosting Management, Data Modeling, Business Logic, User Interface and User Experience. I'm mainly focused on Web and Mobile Development. A huge part of my work experience is related with it. I feel comfortable developing both Front-End and Back-End. I define myself as a creative, dedicated and responsable person who likes challenges. I'm an optimist rather than a pessimist, but I'm also a realist. I enjoy learning new things and sharing my knowledges.",
-  avatarUrl:
-    "https://pbs.twimg.com/profile_images/1795192021801443329/3a7ehmex_400x400.jpg",
+  avatarUrl: "/images/profile.jpg",
   personalWebsiteUrl: "https://andresas.dev",
   contact: {
     email: "a.alvarez.sor@gmail.com",

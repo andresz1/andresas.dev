@@ -14,6 +14,7 @@ export interface PostDetailPageProps {
 export async function generateMetadata({
   params,
 }: PostDetailPageProps): Promise<Metadata> {
+  const siteURL = process.env.SITE_URL;
   const { slug } = params;
   const { postService } = ServicesFactory.create();
 
@@ -26,7 +27,6 @@ export async function generateMetadata({
   }
 
   const { title, summary: description, publishedAt } = post;
-  const siteURL = process.env.SITE_URL;
   const image = post.image
     ? `${siteURL}${post.image}`
     : `${siteURL}/og?title=${title}`;

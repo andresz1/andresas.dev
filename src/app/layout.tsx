@@ -7,7 +7,7 @@ import { Header } from "@/components/layout/header";
 import { cn } from "@/components/ui/core";
 import { ThemeProvider } from "@/components/ui/theme";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const siteURL = process.env.SITE_URL as string;
 
@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          inter.className
+          inter.variable
         )}
       >
         <ThemeProvider

@@ -1,5 +1,4 @@
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
-import { Metadata } from "next";
 import Image from "next/image";
 
 import { ProjectCard } from "@/components/project/project-card";
@@ -8,10 +7,32 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { RESUME_DATA } from "@/data/resume";
 
-export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
-};
+export async function generateMetadata() {
+  const siteURL = process.env.SITE_URL;
+  const title = `${RESUME_DATA.name} | ${RESUME_DATA.about}`;
+  const description = RESUME_DATA.summary;
+  const image = `${siteURL}/og?title=CV`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
 
 export default function Page() {
   return (

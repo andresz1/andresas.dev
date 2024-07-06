@@ -16,6 +16,7 @@ export interface CategoryDetailPageProps {
 export async function generateMetadata({
   params,
 }: CategoryDetailPageProps): Promise<Metadata> {
+  const siteURL = process.env.SITE_URL;
   const { category: categoryId } = params;
   const { categoryService } = ServicesFactory.create();
 
@@ -27,6 +28,7 @@ export async function generateMetadata({
 
   const title = `Aprende sobre ${category.name}`;
   const description = `Aprende sobre ${category.name}, buenas prácticas y mantente actualizado a través de artículos cortos.`;
+  const image = `${siteURL}/og?title=${category.name}`;
 
   return {
     title,
@@ -34,11 +36,17 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
+      images: [
+        {
+          url: image,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [image],
     },
   };
 }
