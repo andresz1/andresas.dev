@@ -26,8 +26,8 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = `Aprende sobre ${category.name}`;
-  const description = `Aprende sobre ${category.name}, buenas prácticas y mantente actualizado a través de artículos cortos.`;
+  const title = `Artículos, recursos y tutoriales sobre ${category.name}`;
+  const description = `Descubre y aprende sobre ${category.name} a través de artículos, recursos y tutoriales especializados. Mantente informado con las últimas tendencias y novedades en Desarrollo Web.`;
   const image = `${siteURL}/og?title=${category.name}`;
 
   return {
@@ -70,12 +70,14 @@ export default async function CategoryDetailPage({
       <div className="max-w-2xl mx-auto space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Aprende {category.name}
+            Artículos, recursos y tutoriales sobre {category.name}
           </h1>
 
           <p className="text-md md:text-lg text-muted-foreground">
-            Aprende sobre <strong>{category.name}</strong>, buenas prácticas y
-            mantente actualizado a través de <strong>artículos cortos</strong>.
+            Descubre y aprende sobre <strong>{category.name}</strong> a través
+            de artículos, recursos y tutoriales especializados. Mantente
+            informado con las últimas tendencias y novedades en{" "}
+            <strong>Desarrollo Web</strong>.
           </p>
         </div>
 

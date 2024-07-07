@@ -6,9 +6,9 @@ import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icon";
 import { ServicesFactory } from "@/services";
 
-const title = "Aprende sobre desarrollo web y más";
+const title = "Artículos, recursos y tutoriales sobre Desarrollo Web";
 const description =
-  "Descubre novedades, trucos y buenas prácticas a través de artículos cortos basados en experiencias reales.";
+  "Descubre y aprende sobre Desarrollo Web a través de artículos, recursos y tutoriales. Mantente informado sobre las últimas tendencias y novedades del sector.";
 
 export const metadata = {
   title,
@@ -34,12 +34,13 @@ export default async function PostListPage() {
       <div className="max-w-2xl mx-auto space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Aprende sobre Desarrollo Web y más
+            Artículos, recursos y tutoriales sobre Desarrollo Web
           </h1>
 
           <p className="text-md md:text-lg text-muted-foreground">
-            Descubre novedades, trucos y buenas prácticas con artículos cortos
-            basados en experiencias reales de <strong>desarrollo web</strong>.
+            Descubre y aprende sobre <strong>Desarrollo Web</strong> a través de
+            artículos, recursos y tutoriales. Mantente informado sobre las
+            últimas tendencias y novedades del sector.
           </p>
         </div>
 

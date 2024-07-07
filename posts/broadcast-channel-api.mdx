@@ -1,0 +1,105 @@
+---
+title: "Broadcast Channel API"
+publishedAt: "2024-07-07"
+summary: "Summary."
+categories: ["react", "javascript", "nextjs"]
+---
+
+# Broadcast Channel API
+
+¿Alguna vez has querido **comunicar** diferentes contextos de navegación (**pestañas**, **iframes** o **workers**)?. En este artículo te explicaré cómo hacerlo utilizando la API de Broadcast Channel y te mostraré un ejemplo real de su uso.
+
+## ¿Qué es la Broadcast Channel API?
+
+La API de Broadcast Channel es una herramienta que permite la comunicación entre diferentes contextos de navegación dentro de la misma página web. Esta API es particularmente útil para coordinar acciones entre diferentes pestañas, como sincronizar datos en tiempo real y actualizar interfaces de usuario.
+
+## Creación y uso básico
+
+Para utilizar Broadcast Channel, primero necesitas crear un nuevo canal de difusión instanciando la clase `BroadcastChannel`. Una vez creado, puedes enviar y recibir mensajes utilizando los métodos `postMessage` y `onmessage`, respectivamente.
+
+```javascript
+// Crear un nuevo canal de difusión
+const channel = new BroadcastChannel("mi-canal");
+
+// Enviar un mensaje
+channel.postMessage("¡Hola a todos!");
+
+// Recibir un mensaje
+channel.onmessage = (event) => {
+  console.log("Mensaje recibido:", event.data);
+};
+```
+
+Te dejo un [enlace](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API) a la [MDN](https://developer.mozilla.org/en-US/) por si quieres ver más detalles de la API.
+
+## Soporte de navegadores
+
+La API de Broadcast Channel está disponible en todos los navegadores modernos. Te dejo un [enlace](https://caniuse.com/broadcastchannel) a [Can I Use](https://caniuse.com/) para que lo revises tú mismo.
+
+## Ejemplo en React
+
+¿Te ha pasado que tienes varias pestañas de un sitio web abiertas, cierras sesión en una de ellas y luego vas a otra y parece que sigues autenticado?. Esto puede generar confusión y una mala experiencia para los usuarios. A continuación, exploraremos cómo utilizar la API Broadcast Channel en una aplicación React para cerrar sesión en todas las pestañas abiertas cuando el usuario realiza esta acción en una de ellas.
+
+### Instalar use-broadcast-channel
+
+El paquete use-broadcast-channel proporciona un hook que actúa como un pequeño envoltorio sobre la API de Broadcast Channel, permitiéndonos usarla fácilmente en React. No es necesario, podríamos utilizar directamente la API de Broadcast Channel, pero estuve revisando el código fuente de la biblioteca y de la API, y me parece una abstracción genial y bien implementada.
+
+```bash
+npm install use-broadcast-channel
+```
+
+### Recibir mensaje
+
+Configuramos un listener en nuestro componente principal de React o en el contexto de autenticación para escuchar mensajes de logout, ejecutando el cambio de estado de autenticado a no autenticado en caso de que ocurra.
+
+```jsx
+import { useState, useMemo } from "react";
+import { useBroadcastChannel } from "use-broadcast-channel";
+
+const AuthProvider = () => {
+  const [user, setUser] = useState();
+
+  useBroadcastChannel("canal", (event) => {
+    if (event.data === "logout") {
+      // Lógica de cierre de sesión
+      setUser(null);
+    }
+  });
+
+  const value = useMemo(() => {
+    const isAuthenticated = !!user;
+
+    return { user, isAuthenticated };
+  }, [user]);
+
+  return <Context.Provider value={value}>{children}</Context.Provider>;
+};
+```
+
+### Enviar mensaje
+
+Finalmente, implementamos la lógica de cierre de sesión y el envío del mensaje en el botón de cerrar sesión. La lógica de cerrar sesión normalmente involucra llamar a un end-point que borra las cookies de sesión. Si esto va bien, se envía el mensaje de `logout` que cambiará el estado de la aplicación a estar no autenticado y automáticamente se actualizará toda la interfaz de usuario en todas las pestañas.
+
+```jsx
+import React, { useEffect } from "react";
+import { channel, sendLogoutMessage } from "./broadcast";
+
+const LogoutButton = () => {
+  const sendMessage = useBroadcastChannel("canal");
+
+  const handleClick = async () => {
+    // Lógica de cerrar sesión
+    await logout();
+
+    sendMessage("logout");
+  };
+
+  return <button onClick={handleClick}>Cerrar sesión</button>;
+};
+
+export default App;
+```
+
+## Conclusión
+
+La API de Broadcast Channel es una herramienta sencilla y poderosa para la comunicación entre contextos de navegación en la misma aplicación web. En este post, hemos visto cómo utilizarla en una aplicación React para cerrar sesión simultáneamente en todas las pestañas mejorando la seguridad y la experiencia del usuario al asegurar que la sesión se cierra en todas las instancias de la aplicación.

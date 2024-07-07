@@ -6,7 +6,7 @@ export const runtime = "edge";
 export async function GET(req: NextRequest) {
   const siteURL = process.env.SITE_URL;
   const { searchParams } = req.nextUrl;
-  const title = searchParams.get("title") || "/";
+  const title = searchParams.get("title") || "/andresas";
   const font = await fetch(
     new URL("../../../public/fonts/Inter-Bold.ttf", import.meta.url)
   ).then((res) => res.arrayBuffer());

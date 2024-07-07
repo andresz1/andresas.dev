@@ -95,7 +95,7 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
         }}
       />
 
-      <Container className="prose break-words dark:prose-invert prose-p:leading-relaxed">
+      <Container className="prose prose-neutral dark:prose-invert">
         <MDX source={post.content} />
       </Container>
     </>

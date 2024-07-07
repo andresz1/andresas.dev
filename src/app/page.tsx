@@ -11,9 +11,9 @@ import { ServicesFactory } from "@/services";
 
 export async function generateMetadata() {
   const siteURL = process.env.SITE_URL;
-  const title = "andresas | JavaScript, CSS, React y más ";
+  const title = "andresas | Blog personal sobre Desarrollo Web";
   const description =
-    "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos cortos.";
+    "Comparto mis experiencias trabajando en aplicaciones web de gran escala, así como en proyectos personales, a través de artículos, recursos y tutoriales sobre Desarrollo Web.";
   const image = `${siteURL}/og`;
 
   return {
@@ -48,16 +48,16 @@ export default async function HomePage() {
       <div className="max-w-2xl mx-auto space-y-4 text-center">
         <div className="space-y-2">
           <div className="text-lg md:text-xl text-muted-foreground">
-            Hola, soy <strong>Andrés Alvarez</strong> 👋🏻 y aqui encontrarás:
+            Hola, soy <strong>Andrés Alvarez</strong> 👋🏻 y este es mi
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold">
-            Artículos cortos sobre JavaScript, CSS, React y más
+            Blog sobre Desarrollo Web
           </h1>
 
           <p className="text-md md:text-lg text-muted-foreground">
             Comparto mis experiencias trabajando en aplicaciones web de gran
-            escala, así como en proyectos personales.
+            escala y en proyectos personales.
           </p>
         </div>
 
