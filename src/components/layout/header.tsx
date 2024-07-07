@@ -21,7 +21,7 @@ export const Header = ({ className, ...others }: HeaderProps) => {
     >
       <Container className={cn("flex h-16 items-center justify-between")}>
         <div className="flex gap-2">
-          <Button size="icon" variant="ghost" asChild>
+          <Button size="icon" variant="ghost" aria-label="Inicio" asChild>
             <Link href="/">
               <Icon>
                 <Slash />
@@ -31,7 +31,7 @@ export const Header = ({ className, ...others }: HeaderProps) => {
         </div>
 
         <div className="flex gap-2">
-          <Button size="icon" variant="outline" asChild>
+          <Button size="icon" variant="outline" aria-label="GitHub" asChild>
             <a href="https://github.com/andresz1" target="_blank">
               <Icon>
                 <Github />
@@ -39,7 +39,7 @@ export const Header = ({ className, ...others }: HeaderProps) => {
             </a>
           </Button>
 
-          <Button size="icon" variant="outline" asChild>
+          <Button size="icon" variant="outline" aria-label="Twitter" asChild>
             <a href="https://twitter.com/andresz_s" target="_blank">
               <Icon>
                 <Twitter />
