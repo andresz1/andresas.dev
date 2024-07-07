@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/project/project-card";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icon";
-import { RESUME_DATA } from "@/data/resume";
+import { RESUME_DATA } from "@/data/es/resume";
 import { ServicesFactory } from "@/services";
 
 export async function generateMetadata() {

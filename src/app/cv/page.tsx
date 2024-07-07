@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/project/project-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
-import { RESUME_DATA } from "@/data/resume";
+import { RESUME_DATA } from "@/data/en/resume";
 
 export async function generateMetadata() {
   const siteURL = process.env.SITE_URL;
