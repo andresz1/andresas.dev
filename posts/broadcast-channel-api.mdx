@@ -61,7 +61,6 @@ const AuthProvider = () => {
 
   useBroadcastChannel("canal", (event) => {
     if (event.data === "logout") {
-      // Lógica de cierre de sesión
       setUser(null);
     }
   });
