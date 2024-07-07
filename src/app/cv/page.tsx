@@ -111,13 +111,13 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="flex min-h-0 flex-col gap-y-3">
+        <section className="flex flex-col gap-y-3">
           <h2 className="text-xl font-bold">About</h2>
 
           <p className="text-sm text-muted-foreground">{RESUME_DATA.summary}</p>
         </section>
 
-        <section className="flex min-h-0 flex-col gap-y-6">
+        <section className="flex flex-col gap-y-6">
           <h2 className="text-xl font-bold">Work Experience</h2>
 
           {RESUME_DATA.work.map((work) => {
@@ -161,7 +161,7 @@ export default function Page() {
           })}
         </section>
 
-        <section className="flex min-h-0 flex-col gap-y-6">
+        <section className="flex flex-col gap-y-6">
           <h2 className="text-xl font-bold">Education</h2>
 
           {RESUME_DATA.education.map((education) => {
@@ -183,7 +183,7 @@ export default function Page() {
           })}
         </section>
 
-        <section className="flex min-h-0 flex-col gap-y-6">
+        <section className="flex flex-col gap-y-6">
           <h2 className="text-xl font-bold">Skills</h2>
 
           <div>
@@ -201,17 +201,17 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="flex min-h-0 flex-col gap-y-6">
+        <section className="flex flex-col gap-y-6">
           <h2 className="text-xl font-bold">Projects</h2>
 
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-2 print:gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 print:grid-cols-3 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
               return (
                 <ProjectCard
                   key={project.title}
                   title={project.title}
                   description={project.description}
-                  tags={project.tags}
+                  imageUrl={project.imageUrl}
                   link={"link" in project ? project.link.href : undefined}
                 />
               );

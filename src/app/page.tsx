@@ -1,12 +1,12 @@
 import { Twitter } from "lucide-react";
-import { Metadata } from "next";
 import Link from "next/link";
 
-import { CategoryList } from "@/components/category/category-list";
 import { PostList } from "@/components/post/post-list";
+import { ProjectCard } from "@/components/project/project-card";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/ui/icon";
+import { RESUME_DATA } from "@/data/resume";
 import { ServicesFactory } from "@/services";
 
 export async function generateMetadata() {
@@ -38,9 +38,8 @@ export async function generateMetadata() {
 }
 
 export default async function HomePage() {
-  const { categoryService, postService } = ServicesFactory.create();
+  const { postService } = ServicesFactory.create();
 
-  const categories = categoryService.fetchAll();
   const posts = await postService.fetchAll();
 
   return (
@@ -48,7 +47,7 @@ export default async function HomePage() {
       <div className="max-w-2xl mx-auto space-y-4 text-center">
         <div className="space-y-2">
           <div className="text-lg md:text-xl text-muted-foreground">
-            Hola, soy <strong>Andrés Alvarez</strong> 👋🏻 y este es mi
+            Hola 👋🏻 soy <strong>Andrés Alvarez</strong> y este es mi
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold">
@@ -81,14 +80,54 @@ export default async function HomePage() {
         <h2 className="text-2xl font-semibold">Sobre mí</h2>
 
         <p className="text-muted-foreground">
-          Soy desarrollador web, me encanta aprender cosas nuevas y compartir
-          mis conocimientos. Actualmente, trabajo como{" "}
-          <b>Staff Front-End Engineer</b> en Adevinta, donde doy soporte a
-          aplicaciones como Fotocasa, Habitaclia, Infojobs, Coches.net y
-          Leboncoin. <br />
-          <br /> Disfruto colaborando en proyectos de código abierto y
-          desarrollando proyectos personales. Además, ofrezco servicios de
-          consultoría en Web Performance.
+          Soy un desarrollador web al que le encanta aprender cosas nuevas y
+          compartir lo que sabe. Ahora mismo, trabajo como Staff Front-End
+          Engineer en Adevinta, donde apoyo aplicaciones como{" "}
+          <a
+            className="font-semibold hover:underline"
+            href="https://www.fotocasa.es/es"
+            target="_blank"
+          >
+            Fotocasa
+          </a>
+          ,{" "}
+          <a
+            className="font-semibold hover:underline"
+            href="https://www.habitaclia.com"
+            target="_blank"
+          >
+            Habitaclia
+          </a>
+          ,{" "}
+          <a
+            className="font-semibold hover:underline"
+            href="https://www.infojobs.net"
+            target="_blank"
+          >
+            Infojobs
+          </a>
+          ,{" "}
+          <a
+            className="font-semibold hover:underline"
+            href="https://www.coches.net"
+            target="_blank"
+          >
+            Coches.net
+          </a>{" "}
+          y{" "}
+          <a
+            className="font-semibold hover:underline"
+            href="https://www.leboncoin.fr"
+            target="_blank"
+          >
+            Leboncoin
+          </a>
+          .<br />
+          <br />
+          Disfruto colaborando en proyectos de código abierto y desarrollando
+          mis propios proyectos personales. Además, ofrezco servicios de
+          consultoría en Web Performance para hacer que las webs sean más
+          rápidas y eficientes.
         </p>
 
         <div className="flex justify-center gap-2">
@@ -111,9 +150,21 @@ export default async function HomePage() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Categorias</h2>
+        <h2 className="text-2xl font-semibold">Mis proyectos</h2>
 
-        <CategoryList categories={categories} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {RESUME_DATA.projects.map((project) => {
+            return (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                link={"link" in project ? project.link.href : undefined}
+              />
+            );
+          })}
+        </div>
       </section>
     </Container>
   );

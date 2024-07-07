@@ -15,9 +15,6 @@ export const Container = ({
   const Component = asChild ? Slot : "div";
 
   return (
-    <Component
-      className={cn("m-auto max-w-[1280px] px-3", className)}
-      {...others}
-    />
+    <Component className={cn("m-auto max-w-6xl px-3", className)} {...others} />
   );
 };

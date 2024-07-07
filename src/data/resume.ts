@@ -170,6 +170,7 @@ export const RESUME_DATA = {
         label: "ez3.js",
         href: "https://github.com/andresz1/ez3.js",
       },
+      imageUrl: "/images/ez3js.png",
     },
     {
       title: "tesfy",
@@ -186,6 +187,7 @@ export const RESUME_DATA = {
         label: "tesfy",
         href: "https://tesfy.vercel.app",
       },
+      imageUrl: "/images/tesfy.png",
     },
     {
       title: "size-limit-action",
@@ -196,6 +198,7 @@ export const RESUME_DATA = {
         label: "size-limit-action",
         href: "https://github.com/andresz1/size-limit-action",
       },
+      imageUrl: "/images/size-limit-action.png",
     },
     {
       title: "sobreia",
@@ -206,6 +209,7 @@ export const RESUME_DATA = {
         label: "sobreia",
         href: "https://www.sobreia.com/",
       },
+      imageUrl: "/images/sobreia.png",
     },
     {
       title: "spark",
@@ -216,6 +220,7 @@ export const RESUME_DATA = {
         label: "spark",
         href: "https://sparkui.vercel.app",
       },
+      imageUrl: "/images/spark.jpg",
     },
   ],
 } as const;

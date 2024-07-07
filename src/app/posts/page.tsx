@@ -1,5 +1,6 @@
 import { Twitter } from "lucide-react";
 
+import { CategoryList } from "@/components/category/category-list";
 import { PostList } from "@/components/post/post-list";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -25,8 +26,9 @@ export const metadata = {
 };
 
 export default async function PostListPage() {
-  const { postService } = ServicesFactory.create();
+  const { categoryService, postService } = ServicesFactory.create();
 
+  const categories = categoryService.fetchAll();
   const posts = await postService.fetchAll();
 
   return (
@@ -60,6 +62,12 @@ export default async function PostListPage() {
         <h2 className="text-2xl font-semibold">Todos los artículos</h2>
 
         <PostList posts={posts} />
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Categorias</h2>
+
+        <CategoryList categories={categories} />
       </section>
     </Container>
   );

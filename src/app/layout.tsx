@@ -43,7 +43,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="space-y-6 mt-4 mb-6">{children}</main>
+
+          <main className="space-y-6 mt-4 print:mt-0 mb-6">{children}</main>
         </ThemeProvider>
       </body>
 
