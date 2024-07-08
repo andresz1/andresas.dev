@@ -80,8 +80,7 @@ const AuthProvider = () => {
 Finalmente, implementamos la lógica de cierre de sesión y el envío del mensaje en el botón de cerrar sesión. La lógica de cerrar sesión normalmente involucra llamar a un end-point que borra las cookies de sesión. Si esto va bien, se envía el mensaje de `logout` que cambiará el estado de la aplicación a estar no autenticado y automáticamente se actualizará toda la interfaz de usuario en todas las pestañas.
 
 ```jsx
-import React, { useEffect } from "react";
-import { channel, sendLogoutMessage } from "./broadcast";
+import { useBroadcastChannel } from "use-broadcast-channel";
 
 const LogoutButton = () => {
   const sendMessage = useBroadcastChannel("canal");
