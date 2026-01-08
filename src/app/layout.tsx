@@ -8,7 +8,7 @@ import { Header } from "@/components/layout/header";
 import { cn } from "@/components/ui/core";
 import { ThemeProvider } from "@/components/ui/theme";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"] });
 
 const siteURL = process.env.SITE_URL as string;
 
@@ -29,13 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
-        )}
-      >
+    <html lang="es" className={inter.className}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

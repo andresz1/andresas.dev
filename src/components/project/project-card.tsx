@@ -12,7 +12,7 @@ interface Props {
 export function ProjectCard({ title, description, imageUrl, link }: Props) {
   return (
     <LinkBox
-      className="flex flex-col overflow-hidden rounded-md shadow-md hover:scale-105 transition-all"
+      className="flex flex-col overflow-hidden rounded-md border transition-all"
       asChild
     >
       <article>
@@ -40,7 +40,7 @@ export function ProjectCard({ title, description, imageUrl, link }: Props) {
             )}
           </h3>
 
-          <p className="text-sm print:text-xs text-muted-foreground line-clamp-3">
+          <p className="text-sm print:text-xs text-muted-foreground line-clamp-4">
             {description}
           </p>
         </div>

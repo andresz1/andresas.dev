@@ -162,6 +162,24 @@ export default function Page() {
         </section>
 
         <section className="flex flex-col gap-y-6">
+          <h2 className="text-xl font-bold">Projects</h2>
+
+          <div className="grid grid-cols-2 gap-2.5 print:grid-cols-2 lg:grid-cols-3">
+            {RESUME_DATA.projects.map((project) => {
+              return (
+                <ProjectCard
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  link={"link" in project ? project.link.href : undefined}
+                />
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-y-6">
           <h2 className="text-xl font-bold">Education</h2>
 
           {RESUME_DATA.education.map((education) => {
@@ -192,28 +210,10 @@ export default function Page() {
                 <Badge
                   key={skill}
                   variant="secondary"
-                  className="text-sm mr-2 mb-3"
+                  className="text-sm mr-2 mb-3 border border-muted"
                 >
                   {skill}
                 </Badge>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-y-6">
-          <h2 className="text-xl font-bold">Projects</h2>
-
-          <div className="grid grid-cols-2 gap-4 print:grid-cols-3 lg:grid-cols-3">
-            {RESUME_DATA.projects.map((project) => {
-              return (
-                <ProjectCard
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  imageUrl={project.imageUrl}
-                  link={"link" in project ? project.link.href : undefined}
-                />
               );
             })}
           </div>

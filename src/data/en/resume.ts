@@ -7,7 +7,7 @@ export const RESUME_DATA = {
   locationLink: "https://www.google.es/maps/place/Barcelona",
   about: "Staff Front-End Engineer",
   summary:
-    "I'm a Software Developer with experience in Server, Network and Hosting Management, Data Modeling, Business Logic, User Interface and User Experience. I'm mainly focused on Web and Mobile Development. A huge part of my work experience is related with it. I feel comfortable developing both Front-End and Back-End. I define myself as a creative, dedicated and responsable person who likes challenges. I'm an optimist rather than a pessimist, but I'm also a realist. I enjoy learning new things and sharing my knowledges.",
+    "I’m a Product Engineer who enjoys building things end‑to‑end from APIs and SDKs to web and mobile applications. Over the past 10+ years, I’ve worked on products at scale (Adevinta, OLX/letgo) and also created my own, like Freetour AI and open‑source libraries such as tesfy and size-limit-action. I focus on solving real problems, improving developer and user experience, and shipping solutions that make an impact. I see myself as someone who bridges product and engineering to deliver value fast without losing sight of quality.",
   avatarUrl: "/images/profile.jpg",
   personalWebsiteUrl: "https://andresas.dev",
   contact: {
@@ -50,7 +50,7 @@ export const RESUME_DATA = {
       start: "2022",
       end: null,
       description:
-        "Leading the Front-End Engineering efforts for the Real Estate Web Community, overseeing Fotocasa and Habitaclia. Implementing initiatives to enhance developer experience (DX), observability, experimentation, testing, and performance organization-wide. Contributing to accelerating delivery and improving quality across key web applications including: Fotocasa, Habitaclia, Coches.net, Infojobs, Leboncoin, and ebay Kleinanzeigen.",
+        "Leading the Web Engineering efforts for the Real Estate Web Community, overseeing Fotocasa and Habitaclia. Implementing initiatives to enhance developer experience (DX), observability, experimentation, testing, and performance organization-wide. Contributing to accelerating delivery and improving quality across key web applications including: Fotocasa, Habitaclia, Coches.net, Infojobs, Leboncoin, and ebay Kleinanzeigen.",
     },
     {
       company: "CodeOp",
@@ -72,7 +72,7 @@ export const RESUME_DATA = {
       start: "2020",
       end: "2022",
       description:
-        "Member of the Trust and Transactions Team, responsible for developing the Milanuncios PWA using: React, SCSS, Jest and Cypress. Integrated Optimizely for experimentation and Datadog for monitoring and observability. Played a key role in the successful migration of Milanuncios from a PHP monolith to React.",
+        "Responsible for developing the Milanuncios web application. Played a key role in successfully migrating Milanuncios from a PHP monolith to React. Built Milanuncios Express from scratch, which processes 100K+ sales per month, along with many other key features to par with Wallapop. Led cross-functional team initiatives, including improving Core Web Vitals and setting up monitoring and observability using Datadog.",
     },
     {
       company: "OLX | letgo",
@@ -83,7 +83,7 @@ export const RESUME_DATA = {
       start: "2018",
       end: "2020",
       description:
-        "Development of Letgo Universal PWA using: React, Redux, styled-components, AMP, Jest, Enzyme, Axios, Flow, Express, Jenkins, Kibana, New Relic, Amplitude and Optimizely.",
+        "Helped build and maintain the Letgo PWA using: React, Redux, styled-components, Jest, Express.js, New Relic, Amplitude, and Optimizely. Developed several key features, including SEO-optimized listing pages, the chat widget, and the bump-up system, which processed more than 50K+ sales per month. Led cross-functional team initiatives such as web performance, observability, accessibility and experimentation.",
     },
     {
       company: "Rocket Digital",
@@ -94,7 +94,7 @@ export const RESUME_DATA = {
       start: "2017",
       end: "2018",
       description:
-        "Development of several SaaS web applications using: Vue.js, Vuetify, Webpack, Jest, Stylus, AngularJS, AngularJS Material, Gulp, Sass, Node.js, Docker, Bitbucket Pipelines, AWS, Spring, PostgreSQL and Apache Kudu.",
+        "Helped build and maintain Rocket SaaS web application to automate search ad campaigns. Played a key role in successfully migrating the monolith (Java and AngularJS) to Vue and microservices using Java, Spring, PostgreSQL, and Apache Kudu by leading front-end development. Delivered several data-intensive key features such as campaign reports, dashboards, and the Google Ads shopping splitter.",
     },
     {
       company: "SlashMobility",
@@ -105,7 +105,7 @@ export const RESUME_DATA = {
       start: "2016",
       end: "2017",
       description:
-        "Development of web and hybrid applications using: AngularJS, Angular, Karma, Jasmine, Node.js, Docker, Jenkins, AWS, Grunt, Gulp, Webpack, Firebase, Cordova, Sass (BEM/SMACSS), Bootstrap, Ionic and Ionic2. Usage of Scrum.",
+        "Development of several web and mobile applications for multiple clients (including: FC Barcelona, Mango and Zurich) using: AngularJS, Angular, Node.js, Ionic, React Native, Express.js and PostgreSQL. Worked under high pressure and tight deadlines.",
     },
     {
       company: "Ludopia",
@@ -116,7 +116,7 @@ export const RESUME_DATA = {
       start: "2016",
       end: "2016",
       description:
-        "Design, development, deployment and maintenance of REST APIs for several games made with Unity using: ES6, Node.js, Express.js, MongoDB, Grunt, Swagger, Django, AWS and NGINX. Usage of Scrum.",
+        "Design, development, deployment and maintenance of REST APIs for several games made with Unity using: Express.js, MongoDB, Django, AWS and NGINX.",
     },
     {
       company: "InWork Solutions",
@@ -127,7 +127,7 @@ export const RESUME_DATA = {
       start: "2015",
       end: "2015",
       description:
-        "Design and development of REST APIs using: Node.js, Express.js and MongoDB. Also worked using HTML5, JQuery and Phaser.js to make landing pages and Cross-Platform 2D games.",
+        "Design and development of REST APIs using: Express.js and MongoDB. Also worked using HTML5, jQuery and Phaser.js to make landing pages and cross-platform 2D games.",
     },
     {
       company: "Universidad Central de Venezuela",
@@ -138,7 +138,7 @@ export const RESUME_DATA = {
       start: "2013",
       end: "2016",
       description:
-        "Monitoring, deployment and maintenance of various servers, mainly Linux based. Management of applications on Apache using several modules. Development of websites using: Wordpress, HTML5, CSS and JavaScript. Database administration on MySQL for multiple applications hosted on the main server. Network and hardware support. As part of the work I was also a Teaching Assistant. Courses given: Programming Languages, Computer Graphics Introduction and Fundamentals and Techniques in Computer Graphics.",
+        "Monitoring, deployment and maintenance of various servers, mainly Linux-based. Management of applications on Apache. Development of websites using: WordPress, HTML5, CSS and JavaScript. Database administration on MySQL for multiple applications. Network and hardware support. As part of the work I was also a Teaching Assistant. Courses given: Programming Languages and Computer Graphics Introduction.",
     },
   ],
   skills: [
@@ -146,13 +146,15 @@ export const RESUME_DATA = {
     "TypeScript",
     "C++",
     "Python",
-    "SQL",
-    "Node.js",
-    "WebGL",
     "React",
+    "React Native",
     "Next.js",
-    "Express.js",
+    "WebGL",
     "Three.js",
+    "Node.js",
+    "Express.js",
+    "SQL",
+    "PostgreSQL",
     "Flask",
     "AWS",
     "Docker",
@@ -162,10 +164,21 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: "Inmoedit",
+      tags: ["JavaScript", "WebGL", "AI", "Real Estate"],
+      description:
+        "The AI photo, video and floor plan editor for real estate agents. More than 15 realtors using it and more than 200 euros MRR.",
+      link: {
+        label: "inmoedit",
+        href: "https://www.inmoedit.com",
+      },
+      imageUrl: "/images/inmoedit.png",
+    },
+    {
       title: "EZ3.js",
       tags: ["JavaScript", "WebGL", "DX", "Performance"],
       description:
-        "A JavaScript framework for building 3D games with HTML5 and WebGL in an easy way. Inspired by Three.js and Phaser.",
+        "A JavaScript framework for building 3D games with HTML5 and WebGL in an easy way. Inspired by Phaser.js.",
       link: {
         label: "ez3.js",
         href: "https://github.com/andresz1/ez3.js",
@@ -182,7 +195,7 @@ export const RESUME_DATA = {
         "Next.js",
       ],
       description:
-        "Ship faster taking data-driven decisions with a set of libraries focused on performance for free.",
+        "Open Source experimentation library available in JavaScript, React, Kotlin and Swift.",
       link: {
         label: "tesfy",
         href: "https://tesfy.vercel.app",
@@ -193,7 +206,7 @@ export const RESUME_DATA = {
       title: "size-limit-action",
       tags: ["GitHub Action", "Performance", "Bundle size"],
       description:
-        "A GitHub action that compares the real cost of your JavaScript in every pull request.",
+        "A GitHub action that compares the real cost of your JavaScript in every pull request. Used by 8K+ repositories.",
       link: {
         label: "size-limit-action",
         href: "https://github.com/andresz1/size-limit-action",
@@ -204,7 +217,7 @@ export const RESUME_DATA = {
       title: "sobreia",
       tags: ["AI", "SEO", "Directory", "Next.js"],
       description:
-        "Discover the latest innovations in tools, websites, and applications with Artificial Intelligence.",
+        "One of the most popular AI directories in Spanish. More than 4K monthly visitors.",
       link: {
         label: "sobreia",
         href: "https://www.sobreia.com/",
@@ -212,15 +225,15 @@ export const RESUME_DATA = {
       imageUrl: "/images/sobreia.png",
     },
     {
-      title: "spark",
-      tags: ["Design System", "React", "Radix", "A11Y"],
+      title: "PerfReviews",
+      tags: ["Web Performance"],
       description:
-        "React based design system focused on modularity and accessibility, using TailwindCSS and Radix UI.",
+        "Web performance audits and trainings. We have helped MediaMarkt, BackMarket, Nestle, and more.",
       link: {
-        label: "spark",
-        href: "https://sparkui.vercel.app",
+        label: "PerfReviews",
+        href: "https://perf.reviews/en",
       },
-      imageUrl: "/images/spark.jpg",
+      imageUrl: "/images/perfreviews.png",
     },
   ],
 } as const;
